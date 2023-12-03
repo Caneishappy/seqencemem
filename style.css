@@ -1,0 +1,53 @@
+body {
+    background-color: #3a3a3a;
+    text-align: center;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#grid-container {
+    width: auto;
+    display: grid;
+    grid-template-areas:
+        "1 1 1"
+        "2 2 2"
+        "3 3 3";
+    gap: 40px;
+    background-color: #0c355750;
+    padding: 5%;
+    padding-top: 5%;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+#grid-container > div {
+    padding: 50px; /* this changes the size*/
+    background-color: #ffffff57;
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    transition: 0.3s;
+}
+
+#restart-btn {
+  transition: 1s;
+  color: white;
+    box-shadow: none;
+    border: none;
+    font-size: 80px;
+    font-family: "Roboto", sans-serif;
+    margin-top: 5%;
+    padding: 50px;
+    display: inline;
+    box-shadow: none;
+    text-align: center;
+    height: 10%;
+    width: auto;
+    transition: 0.4s;
+    background-color: rgb(58, 58, 58);
+    border-radius: 15px;
+}
+
+#restart-btn:hover {
+  background-color: rgb(56, 57, 74);
+}
