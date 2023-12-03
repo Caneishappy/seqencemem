@@ -12,7 +12,7 @@ body {
         "1 1 1"
         "2 2 2"
         "3 3 3";
-    gap: 40px;
+    gap: 30px;
     background-color: #0c355750;
     padding: 5%;
     padding-top: 5%;
@@ -21,7 +21,7 @@ body {
 }
 
 #grid-container > div {
-    padding: 50px; /* this changes the size*/
+    padding: 40px; /* this changes the size*/
     background-color: #ffffff57;
     text-align: center;
     height: 50px;
