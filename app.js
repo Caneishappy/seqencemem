@@ -1,5 +1,3 @@
-
-
 let size = 3;
 const gridcontainer = document.getElementById("grid-container");
 const restartbtn = document.getElementById("restart-btn");
@@ -8,7 +6,7 @@ let grid = [];
 let listToMem = [];
 let count = 0;
 let gameover = false;
-
+let displaying = false;
 countToMemorize();
 
 for (let row = 0; row < size; row++) {
@@ -22,8 +20,8 @@ for (let row = 0; row < size; row++) {
         grid[row].push(newSquare);
         newSquare.addEventListener("click", function () {
             //logic for if the sqare is clicked
-            if (corretMem([row, col])) {
-                console.log("++");
+            if (!displaying) {
+                corretMem([row, col]);
             }
         });
     }
@@ -36,12 +34,9 @@ function corretMem(clicked) {
         listToMem[count][1] == clicked[1]
     ) {
         count++;
-        console.log(listToMem.length, count);
         if (listToMem.length == count) {
-            // console.log("Next round!", listToMem);
-
             // make bg flash green
-
+            counter.innerHTML = String(String(listToMem.length));
             gridcontainer.style["background-color"] = "green";
             setTimeout(function () {
                 gridcontainer.style["background-color"] = "#0c355750";
@@ -55,8 +50,7 @@ function corretMem(clicked) {
 
         return true;
     } else {
-        counter.innerHTML = String("Counter:\n" + String(listToMem.length - 1));
-        // console.log("Falsch, es ist vorbei.");
+        counter.innerHTML = String("Streak:\n" + String(listToMem.length - 1));
         gridcontainer.style["background-color"] = "red";
         // restartbtn.disabled = false
         // restartbtn.style["display"] = "inline"
@@ -70,22 +64,23 @@ function corretMem(clicked) {
 }
 
 function countToMemorize() {
+    displaying = true;
     listToMem.push([]);
-    listToMem[listToMem.length - 1].push(Math.floor(Math.random() * size)); 
+    listToMem[listToMem.length - 1].push(Math.floor(Math.random() * size));
     listToMem[listToMem.length - 1].push(Math.floor(Math.random() * size));
     let item = 0;
     anzeigen = setInterval(function () {
-        try{
-
+        try {
             switchcolor(listToMem[item][0], listToMem[item][1]);
-        }
-        catch{
+        } catch {
             // clearInterval(anzeigen);
         }
         item++;
         if (item >= listToMem.length || gameover) {
-            console.log("cleared interval");
             clearInterval(anzeigen);
+            setTimeout(function (){
+                displaying = false;
+            },300)
         }
     }, 500);
 }
@@ -98,7 +93,7 @@ function switchcolor(x, y) {
 }
 
 function restart() {
-    counter.innerHTML = ""
+    counter.innerHTML = "";
     gameover = false;
     // restartbtn.style["display"] = "none"
     // restartbtn.disabled = true

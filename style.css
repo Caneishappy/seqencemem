@@ -5,7 +5,6 @@ body {
     max-height: 100%;
     font-family: "Roboto", sans-serif;
 }
-
 #grid-container {
     width: auto;
     display: grid;
@@ -22,7 +21,7 @@ body {
 }
 
 #grid-container > div {
-    padding: 40px; /* this changes the size*/
+    padding: 2rem; /* this changes the size*/
     background-color: #ffffff57;
     text-align: center;
     height: 50px;
@@ -38,26 +37,25 @@ body {
     font-size: 80px;
     /* font-family: "Roboto", sans-serif; */
     margin-top: 5%;
-    padding: 50px;
+    padding: 3rem;
     display: inline;
     box-shadow: none;
     text-align: center;
-    height: 10%;
+    height: auto;
     width: auto;
     transition: 0.4s;
-    background-color: rgb(58, 58, 58);
+    background-color: rgb(56, 57, 74);
     border-radius: 15px;
 }
 
-#restart-btn:hover {
-    background-color: rgb(56, 57, 74);
-}
+/* #restart-btn:hover {
+        background-color: rgb(56, 57, 74);
+    } */
 #counterh1 {
-    margin-top: 200px;
-    /* /* text-align: center; */
     position: absolute;
-    /* display: block; */
-
+    left: 20%;
+    bottom: 20%;
+    transform: translate(-50%, -50%);
     color: white;
     font-size: 90px;
 }
