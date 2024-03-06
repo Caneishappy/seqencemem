@@ -5,7 +5,7 @@ const counter = document.getElementById("counterh1");
 let grid = [];
 let listToMem = [];
 let count = 0;
-let gameover = false;
+let notgameover = true;
 let displaying = false;
 countToMemorize();
 
@@ -54,7 +54,7 @@ function corretMem(clicked) {
         gridcontainer.style["background-color"] = "red";
         // restartbtn.disabled = false
         // restartbtn.style["display"] = "inline"
-        gameover = true;
+        notgameover = false;
         setTimeout(function () {
             gridcontainer.style["background-color"] = "#0c355750";
         }, 750);
@@ -76,7 +76,7 @@ function countToMemorize() {
             // clearInterval(anzeigen);
         }
         item++;
-        if (item >= listToMem.length || gameover) {
+        if (item >= listToMem.length || notgameover) {
             clearInterval(anzeigen);
             setTimeout(function (){
                 displaying = false;
@@ -94,7 +94,7 @@ function switchcolor(x, y) {
 
 function restart() {
     counter.innerHTML = "";
-    gameover = false;
+    notgameover = true;
     // restartbtn.style["display"] = "none"
     // restartbtn.disabled = true
     listToMem = [];
