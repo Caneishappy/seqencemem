@@ -76,7 +76,7 @@ function countToMemorize() {
             // clearInterval(anzeigen);
         }
         item++;
-        if (item >= listToMem.length || notgameover) {
+        if (item >= listToMem.length && notgameover) {
             clearInterval(anzeigen);
             setTimeout(function (){
                 displaying = false;
@@ -93,7 +93,7 @@ function switchcolor(x, y) {
 }
 
 function restart() {
-    counter.innerHTML = "0";
+    counter.innerHTML = "";
     notgameover = true;
     // restartbtn.style["display"] = "none"
     // restartbtn.disabled = true
