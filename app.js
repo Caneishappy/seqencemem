@@ -31,7 +31,8 @@ function corretMem(clicked) {
     switchcolor(clicked[0], clicked[1]);
     if (
         listToMem[count][0] == clicked[0] &&
-        listToMem[count][1] == clicked[1]
+        listToMem[count][1] == clicked[1] &&
+        notgameover
     ) {
         count++;
         if (listToMem.length == count) {
@@ -93,7 +94,7 @@ function switchcolor(x, y) {
 }
 
 function restart() {
-    counter.innerHTML = "";
+    counter.innerHTML = "0";
     notgameover = true;
     // restartbtn.style["display"] = "none"
     // restartbtn.disabled = true
