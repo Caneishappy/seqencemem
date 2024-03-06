@@ -93,7 +93,7 @@ function switchcolor(x, y) {
 }
 
 function restart() {
-    counter.innerHTML = "";
+    counter.innerHTML = "0";
     notgameover = true;
     // restartbtn.style["display"] = "none"
     // restartbtn.disabled = true
